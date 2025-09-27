@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Consulting</title>
+    
+    <!-- Favicon optimizado más grande -->
+    <link rel="icon" type="image/svg+xml" href="favicon_big.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="favicon_big.svg">
+    <link rel="icon" type="image/png" href="logo_amarillo.png">
+    <link rel="apple-touch-icon" href="logo_amarillo.svg">
+    <link rel="shortcut icon" href="favicon_big.svg">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -19,6 +27,8 @@
                 <a href="#inicio" class="nav-link">Inicio</a>
                 <a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a>
                 <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#clientes" class="nav-link">Clientes</a>
+                <a href="#tecnologias" class="nav-link">Tecnologías</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
                 <button class="theme-toggle" id="themeToggle">
                     <i class="fas fa-moon" id="themeIcon"></i>
@@ -37,7 +47,7 @@
         <div class="hero-content">
             <h1 class="hero-title">Bienvenido a Big Consulting</h1>
             <p class="hero-subtitle">Tecnología que trabaja para vos.
-            Diseñamos soluciones digitales que se adaptan a tu empresa, para que puedas enfocarte en lo que realmente importa: crecer.</p>
+            Diseñamos soluciones digitales que se adaptan a tu empresa, para que puedas enfocarte en lo que realmente importa: CRECER.</p>
         </div>
         <div class="hero-image">
             <img src="consulting_image.png" alt="Consulting Image">
@@ -53,21 +63,21 @@
                     <div class="about-image">
                         <img src="nuestro_equipo.png" alt="Nuestro Equipo">
                     </div>
-                    
-                    <p>En Big Consulting acompañamos a las PyMEs en su crecimiento, ayudándolas a competir en un mundo cada vez más digital y desafiante. Nos especializamos en brindar soluciones tecnológicas integrales y a medida, adaptadas a la realidad de cada negocio.</p>
-                    
+
+                    <p>En Big Consulting te acompañamos en tu crecimiento, ayudándote a competir en un mundo cada vez más digital, desafiante y competitivo. Nos especializamos en brindar soluciones tecnológicas integrales y a medida, adaptadas a la realidad de cada negocio.</p>
+
                     <p>Nuestro trabajo parte de entender a fondo las necesidades de cada cliente. Desde allí diseñamos, desarrollamos e implementamos sistemas que simplifican procesos, mejoran la gestión y potencian la competitividad.</p>
                     
-                    <ul class="features-list">
+                    <!-- <ul class="features-list">
                         <li><i class="fas fa-check"></i> Sistemas de punto de venta</li>
                         <li><i class="fas fa-check"></i> Reservas online</li>
                         <li><i class="fas fa-check"></i> Gestión de empleados</li>
                         <li><i class="fas fa-check"></i> Plataformas de delivery y e-commerce</li>
                         <li><i class="fas fa-check"></i> Soluciones personalizadas</li>
                         <li><i class="fas fa-check"></i> Reportes a medida para la toma de decisiones</li>
-                    </ul>
+                    </ul> -->
                     
-                    <p>Nuestra propuesta es clara: soluciones digitales prácticas, precios competitivos, atención cercana y acompañamiento permanente, para que cada negocio pueda enfocarse en crecer con confianza.</p>
+                    <p>Nuestra propuesta es clara: soluciones digitales prácticas, atención cercana y acompañamiento permanente, para que cada negocio pueda enfocarse en crecer con confianza.</p>
                 </div>
             </div>
         </div>
@@ -77,77 +87,97 @@
     <section class="services">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="services-carousel">
-                <div class="carousel-container">
-                    <div class="carousel-track" id="servicesTrack">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-credit-card"></i>
-                            </div>
-                            <h3>Puntos de Venta (POS)</h3>
-                            <p>Controlá tu caja, ventas y stock en un solo lugar con sistemas simples y seguros.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-calendar-check"></i>
-                            </div>
-                            <h3>Reservas Online</h3>
-                            <p>Soluciones ideales para cafés, restaurantes, gimnasios, peluquerías y más.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-users-cog"></i>
-                            </div>
-                            <h3>Gestión de Empleados</h3>
-                            <p>Organizá horarios, turnos y asistencia de tu equipo de manera eficiente.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-truck"></i>
-                            </div>
-                            <h3>Delivery y Pedidos Online</h3>
-                            <p>Integramos tu negocio con plataformas de delivery o desarrollamos tu propio sistema.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <h3>E-commerce</h3>
-                            <p>Tiendas online adaptadas a tu rubro, fáciles de usar y listas para vender más.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <h3>Sistemas a Medida</h3>
-                            <p>Desarrollos personalizados para que la tecnología se ajuste a tu negocio, y no al revés.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h3>Consultoría Digital</h3>
-                            <p>Te acompañamos en la transformación digital para optimizar procesos y recursos.</p>
-                        </div>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                            <h3>Reportes y Analítica (Data Science)</h3>
-                            <p>Convertí tus datos en información útil para tomar mejores decisiones.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Espacio para imagen - se agregará después -->
+                        <div class="image-placeholder">
+                          <img src="fullstack.png" alt="Fullstack">
                         </div>
                     </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Sistemas FullStack</h3>
+                        <p class="service-description">En Big Consulting desarrollamos soluciones digitales a medida que combinan funcionalidad, diseño y facilidad de uso. Creamos sitios web, tiendas online y sistemas personalizados de punta a punta, que se adaptan a las necesidades de cada negocio, con interfaces simples e intuitivas.
+
+                        Nuestro equipo domina tecnologías modernas como JavaScript, HTML5, Node.js, SQL, Python, entre otras, lo que nos permite integrar APIs, optimizar procesos, gestionar bases de datos y desarrollar plataformas escalables. Todo con un objetivo claro: hacer que la tecnología trabaje para tu empresa y no al revés.</p>
+                    </div>
                 </div>
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev" id="prevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next" id="nextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Espacio para imagen - se agregará después -->
+                        <div class="image-placeholder">
+                            <img src="base_datos.png" alt="Base de Datos">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Base de Datos</h3>
+                        <p class="service-description">En Big Consulting contamos con experiencia en el manejo de bases de datos tanto locales como en la nube, utilizando tecnologías como SQL (PostgreSQL, MySQL, Oracle, etc.) y NoSQL. Esta integración nos permite garantizar que tus sistemas funcionen con estabilidad, alto rendimiento y seguridad, asegurando que tu información esté siempre protegida y disponible cuando la necesites..</p>
+                    </div>
                 </div>
-                <div class="carousel-indicators" id="carouselIndicators">
-                    <!-- Los indicadores se generarán dinámicamente -->
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Espacio para imagen - se agregará después -->
+                        <div class="image-placeholder">
+                            <img src="api.png" alt="Apis">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Arquitecturas de API's e integraciones</h3>
+                        <p class="service-description">En Big Consulting ofrecemos servicios completos de desarrollo e integración de APIs. Conectamos tus sistemas, aplicaciones y sitios web de manera ágil, reduciendo tiempos y costos de implementación.
+
+                        Podemos trabajar tanto con APIs estándar como personalizadas (REST, SOAP, GraphQL, entre otras) para integrar plataformas externas, soluciones de terceros o desarrollos propios. Esto nos permite crear ecosistemas digitales más eficientes, seguros y fáciles de escalar, ideales para PyMEs, plataformas SaaS, dispositivos IoT e integraciones B2B.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Espacio para imagen - se agregará después -->
+                        <div class="image-placeholder">
+                            <img src="soluciones escalables.png" alt="Soluciones Escalables">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Soluciones Escalables</h3>
+                        <p class="service-description">En Big Consulting implementamos soluciones basadas en Linux y software de código abierto, diseñadas para ofrecer infraestructuras sólidas, seguras y escalables. Nuestros sistemas están pensados para acompañar tanto las necesidades actuales de tu negocio como su crecimiento futuro.
+
+                        Gracias a la experiencia de nuestro equipo en tecnologías open source, logramos optimizar costos, mejorar el rendimiento y garantizar estabilidad, asegurando que tu infraestructura digital sea un verdadero motor de innovación para tu empresa.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Espacio para imagen - se agregará después -->
+                        <div class="image-placeholder">
+                            <img src="automatizacion.png" alt="Automatización">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Automatización de Procesos</h3>
+                        <p class="service-description">En Big Consulting desarrollamos automatizaciones de procesos que ayudan a las empresas a ahorrar tiempo, reducir errores y enfocarse en lo importante: hacer crecer su negocio.
+
+                        Creamos flujos digitales que integran tus herramientas actuales (CRM, ERP, e-commerce, sistemas de facturación, comunicación interna, etc.), eliminando tareas repetitivas y mejorando la eficiencia operativa.
+
+                        Con nuestras soluciones, transformamos procesos manuales en sistemas automáticos, escalables y adaptados a tu empresa, logrando más productividad con menos esfuerzo.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">
+                        <!-- Espacio para imagen - se agregará después -->
+                        <div class="image-placeholder">
+                            <img src="reportes.png" alt="Reportes">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Reportes</h3>
+                        <p class="service-description">En Big Consulting transformamos tus datos en reportes claros y accionables, diseñados para que tomes decisiones con información real y actualizada.
+
+                        Creamos tableros e informes a medida que muestran indicadores clave de tu negocio: ventas, gastos, productividad, atención al cliente, entre otros. Todo en un formato simple, visual y fácil de interpretar.
+
+                        Con nuestras soluciones de analítica y reporting, tu empresa gana claridad, control y visión estratégica, dejando atrás las planillas infinitas y enfocándose en lo que realmente importa: crecer con datos confiables.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,7 +186,7 @@
     <!-- Proyectos Section -->
     <section id="proyectos" class="projects">
         <div class="container">
-            <h2 class="section-title">Nuestros Proyectos</h2>
+            <h2 class="section-title">Proyectos</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <img src="https://via.placeholder.com/300x200/36188a/ffffff?text=Proyecto+1" alt="Proyecto 1">
@@ -198,6 +228,250 @@
         </div>
     </section>
 
+    <!-- Clientes Section -->
+    <section id="clientes" class="clients">
+        <div class="container">
+            <h2 class="section-title">Empresas que Confían en Nosotros</h2>
+            <div class="clients-carousel">
+                <div class="clients-track" id="clientsTrack">
+                    <!-- Cliente 1 -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/36188a/ffffff?text=Cliente+1" alt="Cliente 1">
+                    </div>
+                    <!-- Cliente 2 -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/0D0030/ffffff?text=Cliente+2" alt="Cliente 2">
+                    </div>
+                    <!-- Cliente 3 -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/36188a/ffffff?text=Cliente+3" alt="Cliente 3">
+                    </div>
+                    <!-- Cliente 4 -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/0D0030/ffffff?text=Cliente+4" alt="Cliente 4">
+                    </div>
+                    <!-- Cliente 5 -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/36188a/ffffff?text=Cliente+5" alt="Cliente 5">
+                    </div>
+                    <!-- Cliente 6 -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/0D0030/ffffff?text=Cliente+6" alt="Cliente 6">
+                    </div>
+                    <!-- Cliente 7 -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/36188a/ffffff?text=Cliente+7" alt="Cliente 7">
+                    </div>
+                    <!-- Cliente 8 -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/0D0030/ffffff?text=Cliente+8" alt="Cliente 8">
+                    </div>
+                    
+                    <!-- Duplicados para efecto infinito -->
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/36188a/ffffff?text=Cliente+1" alt="Cliente 1">
+                    </div>
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/0D0030/ffffff?text=Cliente+2" alt="Cliente 2">
+                    </div>
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/36188a/ffffff?text=Cliente+3" alt="Cliente 3">
+                    </div>
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/0D0030/ffffff?text=Cliente+4" alt="Cliente 4">
+                    </div>
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/36188a/ffffff?text=Cliente+5" alt="Cliente 5">
+                    </div>
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/0D0030/ffffff?text=Cliente+6" alt="Cliente 6">
+                    </div>
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/36188a/ffffff?text=Cliente+7" alt="Cliente 7">
+                    </div>
+                    <div class="client-logo">
+                        <img src="https://via.placeholder.com/200x100/0D0030/ffffff?text=Cliente+8" alt="Cliente 8">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologías Section -->
+    <section id="tecnologias" class="technologies">
+        <div class="container">
+            <h2 class="section-title">Tecnologías que Utilizamos</h2>
+            <div class="technologies-carousel">
+                <div class="technologies-track" id="technologiesTrack">
+                    <!-- React -->
+                    <div class="tech-logo">
+                        <i class="fab fa-react" style="color: #61DAFB;"></i>
+                        <span class="tech-name">React</span>
+                    </div>
+                    <!-- Vue.js -->
+                    <div class="tech-logo">
+                        <i class="fab fa-vuejs" style="color: #4FC08D;"></i>
+                        <span class="tech-name">Vue.js</span>
+                    </div>
+                    <!-- Node.js -->
+                    <div class="tech-logo">
+                        <i class="fab fa-node-js" style="color: #339933;"></i>
+                        <span class="tech-name">Node.js</span>
+                    </div>
+                    <!-- Python -->
+                    <div class="tech-logo">
+                        <i class="fab fa-python" style="color: #3776AB;"></i>
+                        <span class="tech-name">Python</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="tech-logo">
+                        <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
+                        <span class="tech-name">JavaScript</span>
+                    </div>
+                    <!-- Java -->
+                    <div class="tech-logo">
+                        <i class="fab fa-java" style="color: #ED8B00;"></i>
+                        <span class="tech-name">Java</span>
+                    </div>
+                    <!-- PHP -->
+                    <div class="tech-logo">
+                        <i class="fab fa-php" style="color: #777BB4;"></i>
+                        <span class="tech-name">PHP</span>
+                    </div>
+                    <!-- MongoDB -->
+                    <div class="tech-logo">
+                        <i class="fas fa-leaf" style="color: #47A248;"></i>
+                        <span class="tech-name">MongoDB</span>
+                    </div>
+                    <!-- MySQL -->
+                    <div class="tech-logo">
+                        <i class="fas fa-database" style="color: #4479A1;"></i>
+                        <span class="tech-name">MySQL</span>
+                    </div>
+                    <!-- PostgreSQL -->
+                    <div class="tech-logo">
+                        <i class="fas fa-database" style="color: #336791;"></i>
+                        <span class="tech-name">PostgreSQL</span>
+                    </div>
+                    <!-- Informix -->
+                    <div class="tech-logo">
+                        <i class="fas fa-server" style="color: #0066cc;"></i>
+                        <span class="tech-name">Informix</span>
+                    </div>
+                    <!-- Docker -->
+                    <div class="tech-logo">
+                        <i class="fab fa-docker" style="color: #2496ED;"></i>
+                        <span class="tech-name">Docker</span>
+                    </div>
+                    <!-- AWS -->
+                    <div class="tech-logo">
+                        <i class="fab fa-aws" style="color: #FF9900;"></i>
+                        <span class="tech-name">AWS</span>
+                    </div>
+                    <!-- Azure -->
+                    <div class="tech-logo">
+                        <i class="fab fa-microsoft" style="color: #0078D4;"></i>
+                        <span class="tech-name">Azure</span>
+                    </div>
+                    <!-- Git -->
+                    <div class="tech-logo">
+                        <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                        <span class="tech-name">Git</span>
+                    </div>
+                    <!-- ChatGPT -->
+                    <div class="tech-logo">
+                        <i class="fas fa-robot" style="color: #00A67E;"></i>
+                        <span class="tech-name">ChatGPT</span>
+                    </div>
+                    <!-- n8n -->
+                    <div class="tech-logo">
+                        <i class="fas fa-project-diagram" style="color: #EA4B71;"></i>
+                        <span class="tech-name">n8n</span>
+                    </div>
+                    <!-- Power BI -->
+                    <div class="tech-logo">
+                        <i class="fas fa-chart-bar" style="color: #F2C811;"></i>
+                        <span class="tech-name">Power BI</span>
+                    </div>
+                    
+                    <!-- Duplicados para efecto infinito -->
+                    <div class="tech-logo">
+                        <i class="fab fa-react" style="color: #61DAFB;"></i>
+                        <span class="tech-name">React</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-vuejs" style="color: #4FC08D;"></i>
+                        <span class="tech-name">Vue.js</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-node-js" style="color: #339933;"></i>
+                        <span class="tech-name">Node.js</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-python" style="color: #3776AB;"></i>
+                        <span class="tech-name">Python</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
+                        <span class="tech-name">JavaScript</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-java" style="color: #ED8B00;"></i>
+                        <span class="tech-name">Java</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-php" style="color: #777BB4;"></i>
+                        <span class="tech-name">PHP</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fas fa-leaf" style="color: #47A248;"></i>
+                        <span class="tech-name">MongoDB</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fas fa-database" style="color: #4479A1;"></i>
+                        <span class="tech-name">MySQL</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fas fa-database" style="color: #336791;"></i>
+                        <span class="tech-name">PostgreSQL</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fas fa-server" style="color: #0066cc;"></i>
+                        <span class="tech-name">Informix</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-docker" style="color: #2496ED;"></i>
+                        <span class="tech-name">Docker</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-aws" style="color: #FF9900;"></i>
+                        <span class="tech-name">AWS</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-microsoft" style="color: #0078D4;"></i>
+                        <span class="tech-name">Azure</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                        <span class="tech-name">Git</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fas fa-robot" style="color: #00A67E;"></i>
+                        <span class="tech-name">ChatGPT</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fas fa-project-diagram" style="color: #EA4B71;"></i>
+                        <span class="tech-name">n8n</span>
+                    </div>
+                    <div class="tech-logo">
+                        <i class="fas fa-chart-bar" style="color: #F2C811;"></i>
+                        <span class="tech-name">Power BI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contacto Section -->
     <section id="contacto" class="contact">
         <div class="container">
@@ -207,15 +481,15 @@
                     <h3>Información de Contacto</h3>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Buenos Aires, Argentina</p>
+                        <p>Olivos Buenos Aires, Argentina</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <p>+54 11 5739-9999</p>
+                        <p>+54 11 5739-9999 o +54 11 2252-9738</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <p>ramisorasgache@hotmail.com</p>
+                        <p>ramisoaresgache@hotmail.com</p>
                     </div>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/ramiro-soaresgache" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -261,6 +535,8 @@
                     <a href="#inicio">Inicio</a>
                     <a href="#sobre-nosotros">Sobre Nosotros</a>
                     <a href="#proyectos">Proyectos</a>
+                    <a href="#clientes">Clientes</a>
+                    <a href="#tecnologias">Tecnologías</a>
                     <a href="#contacto">Contacto</a>
                 </div>
             </div>
@@ -271,5 +547,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </body>
 </html>

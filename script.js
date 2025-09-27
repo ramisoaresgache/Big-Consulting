@@ -25,6 +25,13 @@ let isDarkMode = false;
 
 // Inicialización cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar EmailJS con las credenciales reales
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("rp5CyjxoKh61p6_Gl");
+        window.EMAILJS_CONFIGURED = true;
+        console.log('EmailJS inicializado correctamente');
+    }
+    
     // Verificar si hay tema guardado en localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -41,7 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setupContactForm();
     
     // Configurar el carrusel de servicios
-    setupServicesCarousel();
+    // setupServicesCarousel(); // Comentado: ahora usamos grid layout en lugar de carousel
+    setupClientsCarousel();
+    setupTechnologiesCarousel();
 });
 
 // Función para alternar entre modo claro y oscuro
@@ -302,6 +311,38 @@ function showSuccessMessage() {
     
     // Scroll al mensaje
     successElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Mostrar mensaje informativo
+function showInfoMessage(message) {
+    // Crear elemento informativo
+    const infoElement = document.createElement('div');
+    infoElement.className = 'info-message';
+    infoElement.innerHTML = `
+        <div style="
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        ">
+            <i class="fas fa-info-circle" style="margin-right: 10px;"></i>
+            ${message}
+        </div>
+    `;
+    
+    // Insertar antes del formulario
+    contactForm.parentNode.insertBefore(infoElement, contactForm);
+    
+    // Remover después de 8 segundos
+    setTimeout(() => {
+        infoElement.remove();
+    }, 8000);
+    
+    // Scroll al mensaje
+    infoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 // Validar formato de email
@@ -767,29 +808,118 @@ function sendEmail() {
         message: formData.get('message')
     };
     
-    // Simular envío exitoso (en producción deberías usar un servicio como EmailJS)
-    // Para implementar el envío real, necesitarías configurar EmailJS o un backend
-    console.log('Datos del formulario:', data);
-    console.log('Email destinatario: ramisoaresgache@hotmail.com');
+    // Mostrar mensaje de carga
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
     
-    showSuccessMessage();
-    contactForm.reset();
-    
-    // Para envío real, descomenta y configura EmailJS:
-    /*
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+    // Configurar los parámetros para EmailJS
+    const templateParams = {
         to_email: 'ramisoaresgache@hotmail.com',
         from_name: data.name,
         from_email: data.email,
         company: data.company,
         subject: data.subject,
-        message: data.message
-    }).then(() => {
-        showSuccessMessage();
-        contactForm.reset();
-    }).catch((error) => {
-        showErrorMessage('Error al enviar el mensaje. Intenta nuevamente.');
-        console.error('Error:', error);
+        message: data.message,
+        reply_to: data.email
+    };
+    
+    // Enviar email usando EmailJS con tus credenciales reales
+    if (typeof emailjs !== 'undefined' && window.EMAILJS_CONFIGURED) {
+        emailjs.send('service_vs824qx', 'template_cahiem8', templateParams)
+            .then(function(response) {
+                console.log('Email enviado exitosamente:', response.status, response.text);
+                showSuccessMessage();
+                contactForm.reset();
+            })
+            .catch(function(error) {
+                console.error('Error al enviar email:', error);
+                showErrorMessage('Error al enviar el mensaje. Por favor, intenta nuevamente.');
+            })
+            .finally(function() {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+    } else {
+        console.error('EmailJS no está configurado correctamente');
+        showErrorMessage('Error de configuración. Por favor, intenta nuevamente.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+}
+
+// CONFIGURACIÓN DEL CARRUSEL DE CLIENTES
+function setupClientsCarousel() {
+    const clientsTrack = document.getElementById('clientsTrack');
+    if (!clientsTrack) return;
+
+    // El carrusel se maneja completamente con CSS animations
+    // Esta función puede expandirse para agregar funcionalidad adicional como:
+    // - Pausa al hacer hover en logos específicos
+    // - Control de velocidad dinámico
+    // - Efectos adicionales
+
+    // Opcional: Pausa la animación cuando se hace hover sobre un logo específico
+    const clientLogos = clientsTrack.querySelectorAll('.client-logo');
+    
+    clientLogos.forEach(logo => {
+        logo.addEventListener('mouseenter', () => {
+            clientsTrack.style.animationPlayState = 'paused';
+        });
+        
+        logo.addEventListener('mouseleave', () => {
+            clientsTrack.style.animationPlayState = 'running';
+        });
     });
-    */
+
+    // Reinicia la animación si se pierde el foco
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+            clientsTrack.style.animationPlayState = 'running';
+        }
+    });
+}
+
+// CONFIGURACIÓN DEL CARRUSEL DE TECNOLOGÍAS
+function setupTechnologiesCarousel() {
+    const technologiesTrack = document.getElementById('technologiesTrack');
+    if (!technologiesTrack) return;
+
+    // El carrusel se maneja completamente con CSS animations
+    // Esta función puede expandirse para agregar funcionalidad adicional
+
+    // Pausa la animación cuando se hace hover sobre una tecnología específica
+    const techLogos = technologiesTrack.querySelectorAll('.tech-logo');
+    
+    techLogos.forEach(tech => {
+        tech.addEventListener('mouseenter', () => {
+            technologiesTrack.style.animationPlayState = 'paused';
+        });
+        
+        tech.addEventListener('mouseleave', () => {
+            technologiesTrack.style.animationPlayState = 'running';
+        });
+    });
+
+    // Reinicia la animación si se pierde el foco
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+            technologiesTrack.style.animationPlayState = 'running';
+        }
+    });
+
+    // Añadir efecto de brillo ocasional a las tecnologías
+    setInterval(() => {
+        const randomTech = techLogos[Math.floor(Math.random() * (techLogos.length / 2))]; // Solo las originales, no duplicados
+        if (randomTech && !randomTech.matches(':hover')) {
+            randomTech.style.boxShadow = '0 15px 35px rgba(54, 24, 138, 0.3)';
+            randomTech.style.borderColor = 'var(--accent-color)';
+            
+            setTimeout(() => {
+                randomTech.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
+                randomTech.style.borderColor = 'var(--border-color)';
+            }, 2000);
+        }
+    }, 8000); // Cada 8 segundos
 }
