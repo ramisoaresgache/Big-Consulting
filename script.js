@@ -74,6 +74,9 @@ function enableDarkMode() {
     // Cambiar logos a amarillo para modo oscuro
     if (navLogo) navLogo.src = 'logo_amarillo.png';
     if (footerLogo) footerLogo.src = 'logo_amarillo.png';
+    
+    // Actualizar navbar inmediatamente
+    updateNavbarTheme();
 }
 
 // Activar modo claro
@@ -86,6 +89,27 @@ function enableLightMode() {
     // Cambiar logos a violeta para modo claro
     if (navLogo) navLogo.src = 'logo_violeta_subacento.png';
     if (footerLogo) footerLogo.src = 'logo_violeta_subacento.png';
+    
+    // Actualizar navbar inmediatamente
+    updateNavbarTheme();
+}
+
+// Función para actualizar el navbar según el tema actual
+function updateNavbarTheme() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+    
+    if (window.scrollY > 50) {
+        navbar.style.background = isDarkMode ? 
+            'rgba(13, 0, 48, 0.95)' : 
+            'rgba(255, 255, 255, 0.95)';
+        navbar.style.backdropFilter = 'blur(10px)';
+    } else {
+        navbar.style.background = isDarkMode ? 
+            'var(--dark-bg-primary)' : 
+            'var(--white)';
+        navbar.style.backdropFilter = 'none';
+    }
 }
 
 // Alternar menú móvil
@@ -383,19 +407,7 @@ function animateCounter(element, target, duration = 2000) {
 // Cambiar navbar al hacer scroll
 function setupNavbarScroll() {
     window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        
-        if (window.scrollY > 50) {
-            navbar.style.background = isDarkMode ? 
-                'rgba(13, 0, 48, 0.95)' : 
-                'rgba(255, 255, 255, 0.95)';
-            navbar.style.backdropFilter = 'blur(10px)';
-        } else {
-            navbar.style.background = isDarkMode ? 
-                'var(--dark-bg-primary)' : 
-                'var(--white)';
-            navbar.style.backdropFilter = 'none';
-        }
+        updateNavbarTheme();
     });
 }
 

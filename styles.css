@@ -437,8 +437,8 @@ body {
 
 .clients-track {
     display: flex;
-    width: calc(200px * 16); /* 8 logos x 2 (duplicados) x 200px cada uno */
-    animation: scroll-clients 30s linear infinite;
+    width: calc(200px * 8 + 2rem * 8); /* 4 logos x 2 (duplicados) x 200px + gaps */
+    animation: scroll-clients 20s linear infinite;
     gap: 2rem;
 }
 
@@ -474,13 +474,42 @@ body {
     filter: grayscale(0%);
 }
 
+/* Estilo específico para Safety World en modo claro */
+.safety-world-logo {
+    background: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Invertir colores del logo Safety World en modo claro para que se vea */
+.safety-world-logo img {
+    filter: invert(1) grayscale(100%);
+}
+
+.safety-world-logo:hover img {
+    filter: invert(1) grayscale(0%);
+}
+
+/* En modo oscuro, Safety World mantiene fondo y colores normales */
+.dark-mode .safety-world-logo {
+    background: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.dark-mode .safety-world-logo img {
+    filter: grayscale(100%);
+}
+
+.dark-mode .safety-world-logo:hover img {
+    filter: grayscale(0%);
+}
+
 /* Animación de scroll infinito */
 @keyframes scroll-clients {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-200px * 8 - 2rem * 8)); /* Mueve exactamente 8 logos + gaps */
+        transform: translateX(calc(-200px * 4 - 2rem * 4)); /* Mueve exactamente 4 logos + gaps para efecto infinito */
     }
 }
 
@@ -497,7 +526,7 @@ body {
     }
     
     .clients-track {
-        width: calc(150px * 16);
+        width: calc(150px * 8 + 1.5rem * 8);
         gap: 1.5rem;
     }
     
@@ -506,7 +535,7 @@ body {
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-150px * 8 - 1.5rem * 8));
+            transform: translateX(calc(-150px * 4 - 1.5rem * 4));
         }
     }
 }
@@ -518,7 +547,7 @@ body {
     }
     
     .clients-track {
-        width: calc(120px * 16);
+        width: calc(120px * 8 + 1rem * 8);
         gap: 1rem;
     }
     
@@ -527,7 +556,7 @@ body {
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-120px * 8 - 1rem * 8));
+            transform: translateX(calc(-120px * 4 - 1rem * 4));
         }
     }
 }
