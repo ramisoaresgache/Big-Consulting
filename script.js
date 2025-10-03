@@ -71,9 +71,10 @@ function enableDarkMode() {
     localStorage.setItem('theme', 'dark');
     isDarkMode = true;
     
-    // Cambiar logos a amarillo para modo oscuro
+    // Cambiar logos para modo oscuro
+    // Navbar: logo amarillo sobre fondo oscuro
     if (navLogo) navLogo.src = 'logo_amarillo.png';
-    if (footerLogo) footerLogo.src = 'logo_amarillo.png';
+    // Footer: CSS se encarga del color (violeta sobre fondo amarillo)
     
     // Actualizar navbar inmediatamente
     updateNavbarTheme();
@@ -86,9 +87,10 @@ function enableLightMode() {
     localStorage.setItem('theme', 'light');
     isDarkMode = false;
     
-    // Cambiar logos a violeta para modo claro
+    // Cambiar logos para modo claro
+    // Navbar: logo violeta sobre fondo blanco
     if (navLogo) navLogo.src = 'logo_violeta_subacento.png';
-    if (footerLogo) footerLogo.src = 'logo_violeta_subacento.png';
+    // Footer: CSS se encarga del color (blanco sobre fondo oscuro)
     
     // Actualizar navbar inmediatamente
     updateNavbarTheme();

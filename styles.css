@@ -925,6 +925,16 @@ body {
     font-family: 'Space Grotesk', sans-serif;
 }
 
+/* Logo del footer en modo claro: blanco sobre fondo oscuro */
+.footer-brand .logo {
+    filter: brightness(0) invert(1); /* Convierte a blanco */
+}
+
+/* Logo del footer en modo oscuro: normal sobre fondo amarillo */
+body.dark-mode .footer-brand .logo {
+    filter: none; /* Sin filtro, mantiene color original */
+}
+
 .footer-links {
     display: flex;
     gap: 30px;
