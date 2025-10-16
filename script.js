@@ -72,9 +72,8 @@ function enableDarkMode() {
     isDarkMode = true;
     
     // Cambiar logos para modo oscuro
-    // Navbar: logo amarillo sobre fondo oscuro
-    if (navLogo) navLogo.src = 'logo_amarillo.png';
-    // Footer: CSS se encarga del color (violeta sobre fondo amarillo)
+    if (navLogo) navLogo.src = 'logo.png';
+    if (footerLogo) footerLogo.src = 'logo.png';
     
     // Actualizar navbar inmediatamente
     updateNavbarTheme();
@@ -88,9 +87,8 @@ function enableLightMode() {
     isDarkMode = false;
     
     // Cambiar logos para modo claro
-    // Navbar: logo violeta sobre fondo blanco
-    if (navLogo) navLogo.src = 'logo_violeta_subacento.png';
-    // Footer: CSS se encarga del color (blanco sobre fondo oscuro)
+    if (navLogo) navLogo.src = 'logo.png';
+    if (footerLogo) footerLogo.src = 'logo.png';
     
     // Actualizar navbar inmediatamente
     updateNavbarTheme();
@@ -830,7 +828,7 @@ function sendEmail() {
     
     // Configurar los parámetros para EmailJS
     const templateParams = {
-        to_email: 'ramisoaresgache@hotmail.com',
+        to_email: 'holachromamaze@gmail.com',
         from_name: data.name,
         from_email: data.email,
         company: data.company,
